@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+body {
+  background: url("./images/bg-pattern-top.svg"), url("./images/bg-pattern-bottom.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: calc(44% - 489px) calc(40% - 489px), calc(56% + 489px) calc(60% + 489px);
+  @apply bg-primary-content h-screen relative py-[146px] px-6;
+}
+
+.name {
+  @apply font-bold text-lg;
+}
+
+.name span {
+  @apply font-normal;
+}
+
+main {
+  @apply flex flex-col text-center h-full justify-between bg-white rounded-xl overflow-hidden text-primary-focus font-body;
+}
+
+header {
+  @apply h-[142px];
+}
+
+.header {
+  @apply w-full h-full;
+}
+
+.avatar {
+  @apply w-[96px] h-[96px] rounded-full outline outline-4 outline-white mx-auto -mt-12;
+}
+
+.name {
+  @apply mt-12;
+}
+
+.age {
+  @apply ml-1 text-primary;
+}
+
+.city {
+  @apply text-primary text-sm -mt-3;
+}
+
+hr {
+  @apply border-t-[2px];
+}
+
+.stats {
+  @apply flex mb-5 my-2 justify-center gap-12;
+}
+
+.stats p {
+  @apply flex flex-col font-bold text-lg;
+}
+
+.stats span {
+  @apply font-normal text-[10px] leading-3 text-primary tracking-widest;
+}
+
+/* ------------------------------------------ */
+.img-comp-img.img-comp-overlay {
+  @apply top-0 left-0 absolute w-auto h-auto overflow-hidden text-left;
+}
+
+.img-comp-img img {
+  @apply block h-screen w-screen max-w-none left-0;
+}
+/* ------------------------------------------ */

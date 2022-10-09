@@ -1,0 +1,24 @@
+{
+  "name": "profile-card-component",
+  "version": "1.0.0",
+  "description": "![Design preview for the Profile card component coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./input.css -o ./styles.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muflihanto/frontendmentor-profile-card-component.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muflihanto/frontendmentor-profile-card-component/issues"
+  },
+  "homepage": "https://github.com/muflihanto/frontendmentor-profile-card-component#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.1.8"
+  }
+}
