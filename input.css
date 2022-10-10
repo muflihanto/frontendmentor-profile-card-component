@@ -2,13 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
-
 body {
+  @apply bg-primary-content h-screen relative py-[146px] flex flex-col items-center justify-center;
+}
+
+body::before {
+  content: "";
   background: url("./images/bg-pattern-top.svg"), url("./images/bg-pattern-bottom.svg");
   background-repeat: no-repeat, no-repeat;
-  background-position: calc(44% - 489px) calc(40% - 489px), calc(56% + 489px) calc(60% + 489px);
-  @apply bg-primary-content h-screen relative py-[146px] px-6;
+  background-position: calc(45% - 489px) calc(12% - 489px), calc(44% + 489px) calc(45% + 489px);
+  @apply -z-10 absolute w-screen h-screen top-0 left-0 opacity-90;
+}
+
+@media (orientation: portrait) or (max-width: 375px) {
+  body::before {
+    background-position: calc(44% - 489px) calc(40% - 489px), calc(56% + 489px) calc(64% + 489px);
+  }
 }
 
 .name {
@@ -20,7 +29,8 @@ body {
 }
 
 main {
-  @apply flex flex-col text-center h-full justify-between bg-white rounded-xl overflow-hidden text-primary-focus font-body;
+  @apply flex flex-col text-center h-[calc(100vh-146px)] max-h-[420px] justify-between bg-white rounded-2xl overflow-hidden text-primary-focus font-body min-w-[300px] w-[calc(100vw-48px)] max-w-[351px] lg:h-[375px];
+  box-shadow: 0px 60px 70px -10px hsla(185, 75%, 29%, 0.7), 0px -10px 10px hsla(185, 75%, 29%, 0.1);
 }
 
 header {
@@ -28,7 +38,7 @@ header {
 }
 
 .header {
-  @apply w-full h-full;
+  @apply w-full h-full object-cover;
 }
 
 .avatar {
@@ -52,23 +62,25 @@ hr {
 }
 
 .stats {
-  @apply flex mb-5 my-2 justify-center gap-12;
+  @apply flex mb-[22px] my-2 justify-center lg:gap-12 gap-11 pr-3 lg:pr-0;
 }
 
 .stats p {
   @apply flex flex-col font-bold text-lg;
 }
 
+.stats p:nth-child(2) {
+  @apply mr-1 lg:pr-3;
+}
+
 .stats span {
-  @apply font-normal text-[10px] leading-3 text-primary tracking-widest;
+  @apply font-normal text-[10px] leading-4 text-primary tracking-widest;
 }
 
-/* ------------------------------------------ */
-.img-comp-img.img-comp-overlay {
-  @apply top-0 left-0 absolute w-auto h-auto overflow-hidden text-left;
+.attribution {
+  @apply absolute bottom-3 text-white text-xs;
 }
 
-.img-comp-img img {
-  @apply block h-screen w-screen max-w-none left-0;
+.attribution a {
+  @apply text-white font-bold tracking-wide hover:underline;
 }
-/* ------------------------------------------ */
